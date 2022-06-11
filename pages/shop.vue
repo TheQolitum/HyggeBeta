@@ -5,7 +5,6 @@
       <div class="line"></div>
       <shop_item />
     </div>
-    <popup />
   </div>
 </template>
 

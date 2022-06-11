@@ -1,6 +1,26 @@
 <template>
   <div>
     <div class="shop">
+      <div id="popup" class="popup" v-if="showPopup" style="z-index: 9999">
+        <div class="popup_area" @click.self="close"></div>
+        <div class="popup_body" v-if="showForm">
+          <div class="popup_content">
+            <div class="popup_close" @click.self="close">X</div>
+            <div class="popup_title">Спасибо, что выбрали нас!</div>
+            <div class="popup_text">Для оформления заказа,
+              оставьте свое имя и номер телефона. В течении 2-х часов с вами
+              свяжется наш менеджер.</div>
+            <input type="name" size="20" placeholder="Ваше имя">
+            <input v-model="phone" v-mask="'+7 (###) ###-####'" placeholder="+7 (111) 111-1111">
+            <button @click="next">Отправить</button>
+          </div>
+        </div>
+        <div class="popup_body" v-if="showSuccess">
+          <div class="popup_content">
+            Ваша заявка успешно отправлена, ожидайте звонка.
+          </div>
+        </div>
+      </div>
       <template v-for="(product, $i) in products">
         <productCard
           :product="product"
@@ -8,21 +28,6 @@
           @popup="popup"
         />
       </template>
-      <div id="popup" class="popup" v-if="showPopup" style="z-index: 9999">
-        <a href="" class="popup_area"></a>
-        <div class="popup_body">
-          <div class="popup_content">
-            <a href="" class="popup_close">X</a>
-            <div class="popup_title">Спасибо, что выбрали нас!</div>
-            <div class="popup_text">Для оформления заказа,
-              оставьте свое имя и номер телефона. В течении 2-х часов с вами
-              свяжется наш менеджер.</div>
-            <input type="name" size="20" placeholder="Ваше имя">
-            <input type="number" pattern="[0-9]" placeholder="+7-(9**)-***-**-**">
-            <button>Отправить</button>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </template>
@@ -31,7 +36,6 @@
 
 
 export default {
-
   data() {
     return {
       showPopup: false,
@@ -99,13 +103,25 @@ export default {
           weight: 1000,
           typeString: 'Вид сиропа: клен',
         },
-      ]
+      ],
+      phone: '',
+      showSuccess: false,
+      showForm: false
     }
   },
   methods: {
     popup() {
-      console.log('asdfasdf');
       this.showPopup = true;
+      this.showForm = true;
+    },
+    next() {
+      this.showForm = false;
+      this.showSuccess = true
+    },
+    close() {
+      this.showPopup = false;
+      this.showForm = false;
+      this.showSuccess = false;
     }
   }
 }
@@ -268,13 +284,7 @@ a{
   background-color: rgba(50, 50, 50, 0.44);
   top: 0;
   left: 0;
-  opacity: 0;
-  visibility: hidden;
   transition: all 0.8s ease 0s;
-}
-.popup:target{
-  opacity: 1;
-  visibility: visible;
 }
 .popup_area{
   position: absolute;

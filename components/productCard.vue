@@ -17,17 +17,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      product: {
-        class: 'pol',
-        price: 0,
-        name: '',
-        weight: 0,
-        typeString: '',
-      }
-    }
-  },
   props: ['product'],
   name: "productCard"
 }
