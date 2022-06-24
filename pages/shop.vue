@@ -5,6 +5,9 @@
       <div class="line"></div>
       <shop_item />
     </div>
+    <div class="shop_footer">
+      <a href="mobileshop.vue">Мобильная версия сайта</a>
+    </div>
   </div>
 </template>
 
@@ -33,7 +36,7 @@ export default {
 .block1{
   position: relative;
   background-color: white;
-  height: 200vh;
+  height: 125vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -42,5 +45,16 @@ export default {
   margin: 3% auto;
   width: 90%;
   border-bottom: 1px solid black;
+}
+.shop_footer{
+  position: relative;
+  background-color: #343434;
+  height: 10vh;
+}
+a{
+  position: absolute;
+  color: white;
+  right: 0;
+  bottom: 0;
 }
 </style>

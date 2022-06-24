@@ -14,6 +14,7 @@
       <third />
     </div>
     <div class="footer">
+      <a href="mobile">Мобильная версия сайта</a>
     </div>
     </div>
 </template>
@@ -72,5 +73,12 @@ export default {
 .footer{
   background-color: #343434;
   height: 10vh;
+  position: relative;
+}
+a{
+  position: absolute;
+  color: white;
+  right: 0;
+  bottom: 0;
 }
 </style>

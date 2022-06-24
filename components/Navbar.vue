@@ -5,13 +5,13 @@
           <a class="nav_link" href="/"><img src="@/static/logo.svg" alt=""></a>
           </div>
           <div class="block_columns_nav">
-          <a datatype="go" class="nav_link" href="/">О нас</a>
+          <a class="nav_link" href="/">О нас</a>
           </div>
           <div class="block_columns_nav">
-          <a datatype="go" class="nav_link" href="#">Фотографии</a>
+          <a class="nav_link" href="/mobileshop">Фотографии</a>
           </div>
           <div class="block_columns_nav">
-          <a datatype="go" class="nav_link" href="#">Кухня</a>
+          <a class="nav_link" href="/mobile">Кухня</a>
           </div>
           <div class="block_columns_nav">
           <a class="nav_link" href="/shop">Магазин</a>

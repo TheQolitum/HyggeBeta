@@ -2,7 +2,7 @@
   <header class="header">
     <div class="header_inner">
       <div class="block_columns_nav">
-        <a class="nav_link_shop" href="/"><img src="@/static/logo black.svg" alt=""></a>
+        <a class="nav_link_shop" href="/"><img src="@/static/logo_black.svg" alt=""></a>
       </div>
       <div class="block_columns_nav">
         <a class="nav_link_shop" href="/">Главная</a>
